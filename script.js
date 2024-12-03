@@ -60,18 +60,32 @@ numbers.map((numbers) => {
 //počet záporných čísel
 document.body.innerHTML += '<p><h3>Počet záporných čísel:</h3></p>'
 let negativeNum = 0
-for (let num = 0; num < numbers.length; num += 1) {
-     if (numbers [num] < 0) {
-        negativeNum += 1
-        }
-}
-document.body.innerHTML += negativeNum
+numbers.forEach (item => {
+    if (item < 0) {
+        negativeNum = negativeNum + 1
+    }
+})
+document.body.innerHTML += `<p> ${negativeNum} </p>`
 
 //součet všech čísel v poli
+document.body.innerHTML += '<p><h3>Součet všech čísel v poli je:</h3></p>'
 let sum = 0
-for (let i = 0; i < numbers.length; sum += 1)
+numbers.forEach (item => {
+    sum = sum + item
+})
+document.body.innerHTML += `<p> ${sum} </p>`
 
 //průměr všech čísel v poli
-
+document.body.innerHTML += '<p><h3>Průměr všech čísel je:</h3></p>'
+const diameter = sum / numbers.length
+document.body.innerHTML += `<p> ${sum/numbers.length} </p>`
 
 //součet kladných čísle v poli
+document.body.innerHTML += '<p><h3>Součet všech kladných čísel:</h3></p>'
+let sum2 = 0
+numbers.forEach (num => {
+    if (num > 0){
+        sum2 += num
+    }
+})
+document.body.innerHTML += `<p> ${sum2} </p>`
